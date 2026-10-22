@@ -42,7 +42,7 @@ private:
 class TestAndTestAndSet:public CustomLock{
 public:
 	TestAndTestAndSet(){flag = false;}
-	void lock(){while(flag.load()==true || tas(flag,memory_order_seq_cst)==false){}}
+	void lock(){while(flag==true || tas(flag,memory_order_seq_cst)==false){}}
 	void unlock(){flag.store(false);}
 private:	
 	atomic<bool> flag; 

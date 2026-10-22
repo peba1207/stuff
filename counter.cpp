@@ -91,7 +91,7 @@ int main(int argc, char* argv[]) {
 			{"o",    1, 0,  'o' },
             {0,         0,                 0,  0 }
         };  
-    while((opt = getopt_long(argc, argv, "n:t:N:b:l:o:", long_options,&option_index)) != -1) 
+    while((opt = getopt_long(argc, argv, "N:t:n:b:l:o:", long_options,&option_index)) != -1) 
     { 
       switch(opt){
 		case 'N':
@@ -107,9 +107,11 @@ int main(int argc, char* argv[]) {
 			numThreads = stoi(optarg);
 		case 'b':
 			barParam = optarg;
+			lock = "";
 			break;
 		case 'l':
 			lock = optarg;
+			barParam = "";
 			break;
 	  }
     } 

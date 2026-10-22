@@ -29,7 +29,6 @@ thread_local int mytid = -1;
 
 void thread_bucket(int tid, set<int>* buckets[], int mins[], vector<int>* numbers, int numThreads, int numBuckets, CustomLock* bucket_locks[]){
 	mytid = tid;
-	cout<<mytid;
 	bar->arrive_and_wait();
 	if(tid==0){
 		clock_gettime(CLOCK_MONOTONIC,&startTime);
