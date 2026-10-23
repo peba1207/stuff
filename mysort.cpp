@@ -197,7 +197,7 @@ int main(int argc, char* argv[]) {
 
 	//Sort
 	vector<int>* sorted;
-	int numBuckets = numThreads * 10;
+	int numBuckets = numThreads * 2;
 	sorted = bucketSort(numbers, numThreads, numBuckets);
 
 	//for(auto i: *sorted) cout<<i<<endl;
